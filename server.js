@@ -7,7 +7,15 @@ const app = express();
 
 app.use(express.static('public'));
 
+app.get("/", async (req,res) => {
+
+    res.render("homepage",{})
+})
 
 
 
-app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
+  
