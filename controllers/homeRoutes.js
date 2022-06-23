@@ -4,7 +4,9 @@ const { Game, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => {
+// Get All
+router.get('/', withAuth, async (req, res) => {
+
     try {
       // const userData = await User.findAll({
       //   attributes: { exclude: ['password'] },
@@ -22,9 +24,11 @@ router.get('/', async (req, res) => {
     }
 });
 
+
 router.get('/login',(req,res)=>{res.render("login")})
 router.get('/logout',(req,res)=>{res.render("logout")})
 
+// Get one 
 
 
 
@@ -33,7 +37,14 @@ router.get('/logout',(req,res)=>{res.render("logout")})
 
 
 
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
 
+  res.render("login");
+});
 
 
 
