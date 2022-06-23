@@ -1,12 +1,7 @@
 [
-    {
-      "username": "Sal21",
-      "email": "sal@hotmail.com",
-      "password": "password12345"
-    },
-    {
-        "username": "jude96",
-        "email": "jude@hotmail.com",
-        "password": "password12345"
-      }
+  {
+    "username": "chessprod1",
+    "email": "prod1@gmail.com",
+    "password": "password1234"
+  }
 ]
