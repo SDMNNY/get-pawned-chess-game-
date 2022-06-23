@@ -3,7 +3,7 @@ const { Game, User } = require('../models');
 // custom middleware 
 const withAuth = require('../utils/auth');
 
-
+// Get All
 router.get('/', withAuth, async (req, res) => {
     try {
       const userData = await User.findAll({
@@ -22,6 +22,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+// Get one 
 
 
 
@@ -30,10 +31,14 @@ router.get('/', withAuth, async (req, res) => {
 
 
 
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
 
-
-
-
+  res.render("login");
+});
 
 
 
