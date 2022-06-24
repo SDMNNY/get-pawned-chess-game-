@@ -1,15 +1,21 @@
-const User = require('./User');
-const Move = require('./Move');
-const Game = require('./Game');
+const User = require("./User");
+const Move = require("./Move");
+const Game = require("./Game");
 
 Game.hasMany(Move, {
-    foreignKey: 'game_id',
-  });
-
-Move.belongsTo(Game, {
-    foreignKey: 'game_id',
+  foreignKey: "move_id",
 });
 
+Move.belongsTo(Game, {
+  foreignKey: "move_id",
+});
 
+Game.hasMany(User, {
+  foreignKey: "user_id",
+});
+
+User.belongsTo(Game, {
+  foreignKey: "user_id",
+});
 
 module.exports = { User, Move, Game };
