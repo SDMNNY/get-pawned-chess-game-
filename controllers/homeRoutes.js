@@ -37,7 +37,8 @@ router.get('/games/:id', async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', withAuth, (req, res) => {
+  console.log(req);
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
