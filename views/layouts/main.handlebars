@@ -16,7 +16,7 @@
   <nav>
     <a href="/">Home</a>
     <a href="../challengepage">Challenge</a>
-    {{#if loggedIn}}
+    {{#if session.loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
@@ -31,5 +31,5 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-<script src="../../public/index.js"></script>
+<script src="../../public/gametable.js"></script>
 </html>
