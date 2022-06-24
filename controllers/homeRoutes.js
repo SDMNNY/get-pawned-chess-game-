@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
           attributes: { exclude: ['password'] },
         },
         {
-          model: Game
+          model: Game,
         },
       ],
     });
@@ -37,6 +37,29 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+router.get('/game/:id', async (req, res) => {
+  try { 
+    const moveData = await Move.findByPk(req.params.id, {
+      include : [
+        {
+          model: User,
+          attributes: { exclude: ['password'] };
+        },
+        {
+          model: Game,
+        }
+      ],
+    });
+    const singleMove = modeData.get( { plain: true }); 
+    res.render('singleMove', {
+      singleMove,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 // router.get('/games/:id', async (req, res) => {
 //   try {
 //     const gameData = await Game.findByPk(req.params.id, {
