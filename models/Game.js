@@ -18,7 +18,15 @@ Game.init(
         key: "id",
       },
     },
-    user_id: {
+    wh_user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+
+    blk_user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
