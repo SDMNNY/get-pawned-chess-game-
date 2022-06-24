@@ -1,28 +1,12 @@
 const router = require('express').Router();
-const { Game, User } = require('../models');
+const { Move, User, Game } = require('../models');
 // custom middleware 
 const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-  try {
-    const gameData = await Product.findAll({
-      include: [
-        {
-          model: User,
-          attributes: { exclude: ['password'] },
-        },
-        {
-          model: Game,
-        },
-      ],
-    });
-
-    const games = gameData.map((game) =>
-      games.get({ plain: true })
-    );
-
-    res.render('homepage', { games, loggedIn: req.session.loggedIn });
+  try{
+  res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }
