@@ -69,6 +69,15 @@ router.post('/', async (req, res) => {
       res.status(404).end();
     }
   });
+
+  router.get('/challengepage', async (req, res) => {
+    const allUsers = await User.findAll()
+    const users = allUsers.map((user) =>
+    user.get({plain:true}))
+    res.render('challengepage', {
+      users
+    });
+  });
   
 
 module.exports = router;
