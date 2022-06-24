@@ -1,58 +1,54 @@
-const router = require('express').Router();
-const { Move, Game, User} = require('../models');
-// custom middleware 
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { Move, Game, User } = require("../models");
+// custom middleware
+const withAuth = require("../utils/auth");
 
-
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-  res.render('homepage', { 
-    users,
-    logged_in: req.session.logged_in,
-  });
+    res.render("homepage", {
+      users,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/', async (req, res) => { 
-  try { 
+router.get("/", async (req, res) => {
+  try {
     const moveData = await Move.findAll({
-      include: [ 
+      include: [
         {
           model: User,
-          attributes: { exclude: ['password'] },
+          attributes: { exclude: ["password"] },
         },
         {
           model: Game,
         },
       ],
     });
-    const moves = moveData.map((move) =>
-    moves.get({ plain: true })
-    );
-    res.render('homepage', {moves, loggedIn: req.session.loggedIn});
+    const moves = moveData.map((move) => moves.get({ plain: true }));
+    res.render("homepage", { moves, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-
-router.get('/game/:id', async (req, res) => {
-  try { 
+router.get("/game/:id", async (req, res) => {
+  try {
     const moveData = await Move.findByPk(req.params.id, {
-      include : [
+      include: [
         {
           model: User,
-          attributes: { exclude: ['password'] };
+          attributes: { exclude: ["password"] },
         },
         {
           model: Game,
-        }
+        },
       ],
     });
-    const singleMove = modeData.get( { plain: true }); 
-    res.render('singleMove', {
+    const singleMove = modeData.get({ plain: true });
+    res.render("singleMove", {
       singleMove,
       loggedIn: req.session.loggedIn,
     });
@@ -85,28 +81,24 @@ router.get('/game/:id', async (req, res) => {
 //   }
 // });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
-
-router.get('/challengepage', async (req, res) => {
-  const allUsers = await User.findAll()
-  const users = allUsers.map((user) =>
-  user.get({ plain: true }))
-  res.render('challengepage', {
-    users
+router.get("/challengepage", async (req, res) => {
+  const allUsers = await User.findAll();
+  const users = allUsers.map((user) => user.get({ plain: true }));
+  res.render("challengepage", {
+    users,
   });
 });
 
 module.exports = router;
-
-
 
 // // Get All
 // router.get('/', withAuth, async (req, res) => {
@@ -116,9 +108,9 @@ module.exports = router;
 //         attributes: { exclude: ['password'] },
 //         order: [['name',]],
 //       });
-  
+
 //       const users = userData.map((user) => user.get({ plain: true }));
-  
+
 //       res.render('homepage', {
 //         users,
 //         logged_in: req.session.logged_in,
@@ -128,16 +120,15 @@ module.exports = router;
 //     }
 // });
 
-
 // router.get('/login',(req,res)=>{res.render("login")})
 // router.get('/logout',(req,res)=>{res.render("logout")})
 
-// // Get one 
+// // Get one
 // router.get('/user/:id', async (req, res) => {
-//   if (!req.session.loggedIn) { 
+//   if (!req.session.loggedIn) {
 //     res.redirect('/login');
-//   } else { 
-//     try { 
+//   } else {
+//     try {
 //       const userData = await User.findByPk(req.params.id, {
 //         include : [
 //           {
@@ -149,23 +140,17 @@ module.exports = router;
 //             ],
 //           },
 //         ],
-  
+
 //       });
 //       const user = userData.get({ plain: true });
 //       res.render('user', {user, loggedIn: req.session.loggedIn});
 //     } catch (err) {
-//       console.log(err); 
+//       console.log(err);
 //       res.status(500).json(err);
 //     }
 //   }
-  
+
 // });
-
-
-
-
-
-
 
 // router.get("/login", (req, res) => {
 //   if (req.session.loggedIn) {
@@ -176,9 +161,4 @@ module.exports = router;
 //   res.render("login");
 // });
 
-
-
-
-
 // module.exports = router;
-
