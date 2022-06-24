@@ -82,11 +82,18 @@ router.get("/game/:id", async (req, res) => {
 //   }
 // });
 
-router.get("/challengepage", async (req, res) => {
+router.get("/challengepage", withAuth, async (req, res) => {
   const allUsers = await User.findAll();
   const users = allUsers.map((user) => user.get({ plain: true }));
+  if (!req.session.loggedIn) {
+    res.redirect("login", {
+      users,
+    });
+    return;
+  }
   res.render("challengepage", {
     users,
+    loggedIn: req.session.loggedIn,
   });
 });
 
