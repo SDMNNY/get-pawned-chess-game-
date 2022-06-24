@@ -1,6 +1,5 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models');
-
+const { User,Move } = require('../models');
 const userData = require('./userData.json');
 const moveData = require("./moveData.json");
 
@@ -14,7 +13,7 @@ const seedDatabase = async () => {
       returning: true,
     });
     
-    await moveData();
+    await Move.bulkCreate(moveData);
     
     process.exit(0);
   };
