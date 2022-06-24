@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Game, User } = require('../models');
+const { Game, User } = require('../../models');
 
 
 
