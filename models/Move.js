@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Game extends Model {}
+class Move extends Model {}
 
-Game.init(
+Move.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,18 +11,23 @@ Game.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    move_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "move",
-        key: "id",
-      },
+    piece: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    user_id: {
+    starting_position: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    next_position: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    game_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
-        key: "id",
+        model: 'game',
+        key: 'id',
       },
     },
   },
@@ -31,8 +36,8 @@ Game.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "game",
+    modelName: "move",
   }
 );
 
-module.exports = Game;
+module.exports = Move;
