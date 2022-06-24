@@ -95,6 +95,15 @@ router.get('/login', (req, res) => {
 });
 
 
+router.get('/challengepage', async (req, res) => {
+  const allUsers = await User.findAll()
+  const users = allUsers.map((user) =>
+  user.get({ plain: true }))
+  res.render('challengepage', {
+    users
+  });
+});
+
 module.exports = router;
 
 
