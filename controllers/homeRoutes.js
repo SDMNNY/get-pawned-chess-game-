@@ -126,8 +126,8 @@ module.exports = router;
 // });
 
 
-// router.get('/login',(req,res)=>{res.render("login")})
-// router.get('/logout',(req,res)=>{res.render("logout")})
+router.get('/login',(req,res)=>{res.render("login")})
+router.get('/logout',(req,res)=>{res.render("logout")})
 
 // // Get one 
 // router.get('/user/:id', async (req, res) => {
