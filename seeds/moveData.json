@@ -2,7 +2,6 @@
   {
     "piece": "p",
     "starting_position": "d2",
-    "next_position": "d3",
-    "game_id": "0"
+    "next_position": "d3"
   }
 ]
