@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const session = require('connect-session-sequelize');
 const { Move, Game, User} = require('../models');
 // custom middleware 
 const withAuth = require('../utils/auth');
@@ -6,9 +7,10 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-  res.render('homepage');
-  } catch (err) {
-    res.status(500).json(err);
+    console.log(req.session);
+    res.render('homepage');
+    } catch (err) {
+      res.status(500).json(err);
   }
 });
 
@@ -48,7 +50,7 @@ router.get('/game/:id', async (req, res) => {
         }
       ],
     });
-    const singleMove = modeData.get( { plain: true }); 
+    const singleMove = moveData.get( { plain: true }); 
     res.render('singleMove', {
       singleMove,
       loggedIn: req.session.loggedIn,
@@ -82,14 +84,6 @@ router.get('/game/:id', async (req, res) => {
 //   }
 // });
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
 
 
 router.get('/challengepage', async (req, res) => {
@@ -107,30 +101,38 @@ module.exports = router;
 
 // // Get All
 // router.get('/', withAuth, async (req, res) => {
-
-//     try {
-//       const userData = await User.findAll({
-//         attributes: { exclude: ['password'] },
-//         order: [['name',]],
-//       });
   
-//       const users = userData.map((user) => user.get({ plain: true }));
-  
-//       res.render('homepage', {
-//         users,
-//         logged_in: req.session.logged_in,
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-// });
-
-
-router.get('/login',(req,res)=>{res.render("login")})
-router.get('/logout',(req,res)=>{res.render("logout")})
-
-// // Get one 
-// router.get('/user/:id', async (req, res) => {
+  //     try {
+    //       const userData = await User.findAll({
+      //         attributes: { exclude: ['password'] },
+      //         order: [['name',]],
+      //       });
+      
+      //       const users = userData.map((user) => user.get({ plain: true }));
+      
+      //       res.render('homepage', {
+        //         users,
+        //         logged_in: req.session.logged_in,
+        //       });
+        //     } catch (err) {
+          //       res.status(500).json(err);
+          //     }
+          // });
+          
+          
+          router.get('/logout',(req,res)=>{res.render("logout")})
+          
+          router.get('/login', (req, res) => {
+            console.log(req.session);
+            if (req.session.loggedIn) {
+              res.redirect('/');
+              return;
+            }
+          
+            res.render('login');
+          });
+          // // Get one 
+          // router.get('/user/:id', async (req, res) => {
 //   if (!req.session.loggedIn) { 
 //     res.redirect('/login');
 //   } else { 
