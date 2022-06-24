@@ -42,7 +42,7 @@ router.get('/games/:id', async (req, res) => {
       ],
     });
 
-    const singleGame = productData.get({ plain: true });
+    const singleGame = gameData.get({ plain: true });
 
     res.render('singleGame', {
       singleGame,
@@ -60,14 +60,6 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
-});
-
-router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('signup');
 });
 
 
