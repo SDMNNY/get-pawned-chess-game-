@@ -1,41 +1,66 @@
 const router = require('express').Router();
-const { Move, User, Game } = require('../models');
+const { Move, Game, User} = require('../models');
 // custom middleware 
 const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-  try{
-  res.render('homepage');
+  try {
+  res.render('homepage', { 
+    users,
+    logged_in: req.session.logged_in,
+  });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/games/:id', async (req, res) => {
-  try {
-    const gameData = await Game.findByPk(req.params.id, {
-      include: [
+router.get('/', async (req, res) => { 
+  try { 
+    const moveData = await Move.findAll({
+      include: [ 
         {
           model: User,
           attributes: { exclude: ['password'] },
         },
         {
-          model: Game,
+          model: Game
         },
       ],
     });
-
-    const singleGame = gameData.get({ plain: true });
-
-    res.render('singleGame', {
-      singleGame,
-      loggedIn: req.session.loggedIn,
-    });
+    const moves = moveData.map((move) =>
+    moves.get({ plain: true })
+    );
+    res.render('homepage', {moves, loggedIn: req.session.loggedIn});
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// router.get('/games/:id', async (req, res) => {
+//   try {
+//     const gameData = await Game.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: { exclude: ['password'] },
+//         },
+//         {
+//           model: Game,
+//         },
+//       ],
+//     });
+
+//     const singleGame = gameData.get({ plain: true });
+
+//     res.render('singleGame', {
+//       singleGame,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
