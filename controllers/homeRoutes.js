@@ -6,7 +6,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const allUsers = await User.findAll();
+    const allUsers = await User.findAll({});
     const users = allUsers.map((user) => user.get({ plain: true }));
     console.log(req.session);
     res.render("homepage", {
