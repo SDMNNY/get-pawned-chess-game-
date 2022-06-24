@@ -5,34 +5,33 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    res.render("homepage", {
-      users,
-      logged_in: req.session.logged_in,
-    });
+    res.render("homepage");
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const moveData = await Move.findAll({
-      include: [
-        {
-          model: User,
-          attributes: { exclude: ["password"] },
-        },
-        {
-          model: Game,
-        },
-      ],
-    });
-    const moves = moveData.map((move) => moves.get({ plain: true }));
-    res.render("homepage", { moves, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/', async (req, res) => {
+//   try {
+//     const moveData = await Move.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: { exclude: ['password'] },
+//         },
+//         {
+//           model: Game,
+//         },
+//       ],
+//     });
+//     const moves = moveData.map((move) =>
+//     moves.get({ plain: true })
+//     );
+//     res.render('homepage');
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get("/game/:id", async (req, res) => {
   try {
