@@ -1,20 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Pawned</title>
-    <link rel="stylesheet" type="text/css" href="/css/jass.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </head>
-<style>body, html {
-  height: 100%;
-  margin: 0;
-}
-</style>
-  <body>
-    <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blaka&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="../public/css/jass.css" />
+</head>
+<body>
+      <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
       <h1 style="display: grid;margin:2px;padding:2px;justify-content:flex-start;position:relative;top:10px;color:black;font-size:60px;">Chess</h1>
       <ul style="list-style:none;display:inline-block;margin-left:56%;margin-top:50px;">
       <a href="/" style="color: black;font-size:20px;margin:10px;">Home</a>
@@ -32,9 +43,66 @@
         {{{body}}}
       </div>
     </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <p class="grey-text text-lighten-4">To learn more about our company and contact us, please see the links to the side.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Contact Us</h5>
+              <ul id="footer-ul">
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Email Us</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Call Us</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="https://twitter.com/Climate_DAO" target="blank"
+                  ><i class="fab fa-twitter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!" target="blank"
+                  ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!" target="blank"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2022 GET PAWNED
+          <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>
     {{/if}}
   </body>
   <script src="../../public/js/gametable.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+  <script src="../public\js\news.js"></script>
+</body>
 </html>
