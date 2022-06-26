@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Pawned</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
@@ -25,7 +26,7 @@
     <link rel="stylesheet" href="../public/css/jass.css" />
 </head>
 <body>
-      <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
+     <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
       <h1 style="display: grid;margin:2px;padding:2px;justify-content:flex-start;position:relative;top:10px;color:black;font-size:60px;">Chess</h1>
       <ul style="list-style:none;display:inline-block;margin-left:56%;margin-top:50px;">
       <a href="/" style="color: black;font-size:20px;margin:10px;">Home</a>
@@ -34,11 +35,11 @@
       {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
-        <a href="/login" style="color: black;font-size:20px;margin:10px;">Login/logout</a>
+        <a href="/login">Login</a>
       {{/if}}
-      </ul>
     </nav>
-    <main style="background-image: url('https://cdn.wallpapersafari.com/73/39/C2wfxR.jpg');height:100%;background-size:cover;backgorund:fade;">
+    
+    <main>
       <div class="bod">
         {{{body}}}
       </div>
@@ -90,6 +91,7 @@
     {{/if}}
   </body>
   <script src="../../public/js/gametable.js"></script>
+
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script
