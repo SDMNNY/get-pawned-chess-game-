@@ -6,7 +6,7 @@ var requestOptions = {
 // parameters to target search topic and category of articles / including api key 
 
 var params = { 
-    api_token: "BAUV4sZ1juzHwHMoP0oEixmrImpP3BRbhT4WLffk",
+    api_token: "fb4749f0721f465ebf5aac1da9d746b7",
     categories: [
         "general",
         "tech",
@@ -14,7 +14,7 @@ var params = {
         "sports"
     ],
     search: "chess",
-    limit: "100",
+    limit: "5",
 };
 
 var esc = encodeURIComponent;
@@ -48,7 +48,7 @@ fetch(`https://api.thenewsapi.com/v1/news/all?${query}${requestOptions}`)
         var card = $("<div>");
         card.addClass("card");
         // data aos is animate on scroll attribute. allows cards to flip up as user scrolls.
-        card.attr("data-aos", "flip-up");
+        // card.attr("data-aos", "flip-up");
         var cardImgContainer = $("<div>");
         var cardImg = $("<img>").attr("src", `${articleImg}`);
         cardImg.attr("id", "card-img");
