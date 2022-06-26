@@ -11,13 +11,7 @@ Game.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    move_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "move",
-        key: "id",
-      },
-    },
+
     wh_user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -33,6 +27,11 @@ Game.init(
         key: "id",
       },
     },
+
+    game_string: {
+      type: DataTypes.STRING,
+      
+    }
   },
   {
     sequelize,

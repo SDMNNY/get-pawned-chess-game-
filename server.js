@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname,"public")))
 
 const sess = {
   //TODO: Change secret to .env
-  secret: 'Super secret secret',
+  secret: process.env.SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -45,7 +45,6 @@ app.use(routes)
 
 //     res.render("login",{})
 // })
-
 
 
 

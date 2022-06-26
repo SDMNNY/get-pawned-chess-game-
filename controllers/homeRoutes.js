@@ -6,13 +6,8 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const allUsers = await User.findAll();
-    const users = allUsers.map((user) => user.get({ plain: true }));
     console.log(req.session);
-    res.render("homepage", {
-      users,
-      loggedIn: req.session.loggedIn,
-    });
+    res.render("homepage");
   } catch (err) {
     res.status(500).json(err);
   }
@@ -101,6 +96,7 @@ router.get("/challengepage", withAuth, async (req, res) => {
     loggedIn: req.session.loggedIn,
   });
 });
+
 
 module.exports = router;
 
