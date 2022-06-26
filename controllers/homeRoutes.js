@@ -64,18 +64,40 @@ router.get("/game/:id", async (req, res) => {
 });
 
 router.get("/challengepage", withAuth, async (req, res) => {
+  try{
   const allUsers = await User.findAll();
   const users = allUsers.map((user) => user.get({ plain: true }));
   res.render("challengepage", {
     users,
     loggedIn: req.session.loggedIn,
   });
+} catch (err) {
+  res.status(500).json(err);
+}
 });
 
 router.get("/challengepage/game-1", withAuth, async (req, res) => {
   const allUsers = await User.findAll();
   const users = allUsers.map((user) => user.get({ plain: true }));
   res.render("game-1", {
+    users,
+    loggedIn: req.session.loggedIn,
+  });
+});
+
+router.get("/challengepage/game-2", withAuth, async (req, res) => {
+  const allUsers = await User.findAll();
+  const users = allUsers.map((user) => user.get({ plain: true }));
+  res.render("game-2", {
+    users,
+    loggedIn: req.session.loggedIn,
+  });
+});
+
+router.get("/challengepage/game-3", withAuth, async (req, res) => {
+  const allUsers = await User.findAll();
+  const users = allUsers.map((user) => user.get({ plain: true }));
+  res.render("game-3", {
     users,
     loggedIn: req.session.loggedIn,
   });
