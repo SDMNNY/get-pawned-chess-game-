@@ -6,6 +6,7 @@
     <title>Get Pawned</title>
     <link rel="stylesheet" type="text/css" href="/css/jass.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
 <style>body, html {
   height: 100%;
@@ -13,10 +14,8 @@
 }
 </style>
   <body>
-    <header>
+    <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
       <h1>Chess</h1>
-    </header>
-    <nav>
       <a href="/">Home</a>
       <a href="../challengepage">Challenge</a>
       {{#if loggedIn}}
@@ -25,7 +24,7 @@
         <a href="/login">Login</a>
       {{/if}}
     </nav>
-    <main style="background-image: url('https://cdn.wallpapersafari.com/73/39/C2wfxR.jpg');height:100%;background-size:cover;">
+    <main style="background-image: url('https://cdn.wallpapersafari.com/73/39/C2wfxR.jpg');height:100%;background-size:cover;backgorund:fade;">
       <div class="bod">
         {{{body}}}
       </div>
