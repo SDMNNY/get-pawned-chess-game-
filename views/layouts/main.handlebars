@@ -6,23 +6,32 @@
     <title>Get Pawned</title>
     <link rel="stylesheet" type="text/css" href="/css/jass.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+<<<<<<< HEAD
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+=======
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+>>>>>>> 727e93de270200731c6cc2710c5754d6a5bae839
   </head>
-
+<style>body, html {
+  height: 100%;
+  margin: 0;
+}
+</style>
   <body>
-    <header>
-      <h1>Chess</h1>
-    </header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="../challengepage">Challenge</a>
+    <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
+      <h1 style="display: grid;margin:2px;padding:2px;justify-content:flex-start;position:relative;top:10px;color:black;font-size:60px;">Chess</h1>
+      <ul style="list-style:none;display:inline-block;margin-left:56%;margin-top:50px;">
+      <a href="/" style="color: black;font-size:20px;margin:10px;">Home</a>
+      <a href="../challengepage" style="color: black;font-size:20px;margin:10px;">Forums</a>
+      <a href="../allgames" style="color: black;font-size:20px;margin:10px;">view-games</a>
       {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
-        <a href="/login">Login</a>
+        <a href="/login" style="color: black;font-size:20px;margin:10px;">Login/logout</a>
       {{/if}}
+      </ul>
     </nav>
-    <main>
+    <main style="background-image: url('https://cdn.wallpapersafari.com/73/39/C2wfxR.jpg');height:100%;background-size:cover;backgorund:fade;">
       <div class="bod">
         {{{body}}}
       </div>
