@@ -57,30 +57,6 @@ router.get("/game/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-// router.get('/games/:id', async (req, res) => {
-//   try {
-//     const gameData = await Game.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: { exclude: ['password'] },
-//         },
-//         {
-//           model: Game,
-//         },
-//       ],
-//     });
-
-//     const singleGame = gameData.get({ plain: true });
-
-//     res.render('singleGame', {
-//       singleGame,
-//       loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 router.get("/challengepage", withAuth, async (req, res) => {
   const allUsers = await User.findAll();
