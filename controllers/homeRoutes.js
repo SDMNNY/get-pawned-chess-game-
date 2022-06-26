@@ -66,13 +66,16 @@ router.get("/game/:id", async (req, res) => {
 router.get("/challengepage", withAuth, async (req, res) => {
   const allUsers = await User.findAll();
   const users = allUsers.map((user) => user.get({ plain: true }));
-  if (!req.session.loggedIn) {
-    res.redirect("login", {
-      users,
-    });
-    return;
-  }
   res.render("challengepage", {
+    users,
+    loggedIn: req.session.loggedIn,
+  });
+});
+
+router.get("/challengepage/game-1", withAuth, async (req, res) => {
+  const allUsers = await User.findAll();
+  const users = allUsers.map((user) => user.get({ plain: true }));
+  res.render("game-1", {
     users,
     loggedIn: req.session.loggedIn,
   });
