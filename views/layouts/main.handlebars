@@ -6,26 +6,21 @@
     <link rel="stylesheet" type="text/css" href="/css/jass.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
-<style>body, html {
-  height: 100%;
-  margin: 0;
-}
-</style>
+
   <body>
-    <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
-      <h1 style="display: grid;margin:2px;padding:2px;justify-content:flex-start;position:relative;top:10px;color:black;font-size:60px;">Chess</h1>
-      <ul style="list-style:none;display:inline-block;margin-left:56%;margin-top:50px;">
-      <a href="/" style="color: black;font-size:20px;margin:10px;">Home</a>
-      <a href="../challengepage" style="color: black;font-size:20px;margin:10px;">Forums</a>
-      <a href="../allgames" style="color: black;font-size:20px;margin:10px;">view-games</a>
+    <header>
+      <h1>Chess</h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="../challengepage">Challenge</a>
       {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
-        <a href="/login" style="color: black;font-size:20px;margin:10px;">Login/logout</a>
+        <a href="/login">Login</a>
       {{/if}}
-      </ul>
     </nav>
-    <main style="background-image: url('https://cdn.wallpapersafari.com/73/39/C2wfxR.jpg');height:100%;background-size:cover;backgorund:fade;">
+    <main>
       <div class="bod">
         {{{body}}}
       </div>
