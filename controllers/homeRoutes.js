@@ -150,9 +150,6 @@ module.exports = router;
 //     }
 // });
 
-router.get("/logout", (req, res) => {
-  res.render("logout");
-});
 
 router.get("/login", (req, res) => {
   console.log(req.session);
