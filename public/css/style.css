@@ -2,15 +2,19 @@
 Login Page
 */
 
-.login-header {
+.bod {
+    display: flex;
+    flex-direction: column;
+}
+
+.bod h2 {
     text-align: center;
 }
 
-.login-form {
+.form {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-
 
 
