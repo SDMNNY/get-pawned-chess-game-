@@ -1,43 +1,37 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Move extends Model {}
+class Comment extends Model {}
 
-Move.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
       autoIncrement: true,
+      primaryKey: true,
     },
-    piece: {
+    body: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    starting_position: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    next_position: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    game_id: {
+    user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
-        model: 'game',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
+    createdAt: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "move",
+    modelName: "comment",
   }
 );
 
-module.exports = Move;
+module.exports = Comment;

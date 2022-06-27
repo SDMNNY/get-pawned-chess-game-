@@ -36,7 +36,6 @@ const sess = {
   })
 };
 
-
 app.use(session(sess));
 
 //ROUTES SETUP
