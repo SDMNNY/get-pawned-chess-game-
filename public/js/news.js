@@ -17,3 +17,5 @@ newsapi.v2.topHeadlines({
     }
   */
 });
+
+module.export = NewsAPI
