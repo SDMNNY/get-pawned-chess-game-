@@ -21,6 +21,8 @@
   "homepage": "https://github.com/SDMNNY/get-pawned-chess-game-#readme",
   "dependencies": {
     "@chrisoakman/chessboardjs": "^1.0.0",
+    "@mozilla/readability": "^0.4.2",
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "chess.js": "^0.13.2",
     "connect-session-sequelize": "^7.1.4",
@@ -29,9 +31,9 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "jquery": "^3.6.0",
+    "jsdom": "^20.0.0",
     "mysql2": "^2.3.3",
     "newsapi": "^2.4.1",
-    "node-fetch": "^3.2.6",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
