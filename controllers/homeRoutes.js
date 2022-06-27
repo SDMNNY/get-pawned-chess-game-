@@ -12,6 +12,10 @@ router.get("/", async (req, res) => {
       users,
       loggedIn: req.session.loggedIn,
     });
+=======
+    }
+    );
+
   } catch (err) {
     res.status(500).json(err);
   }
