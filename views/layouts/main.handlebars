@@ -1,46 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get Pawned</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Blaka&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/jass.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
 
-    <link rel="stylesheet" href="../public/css/style.css" />
-    <link rel="stylesheet" href="../public/css/jass.css" />
-</head>
-<body>
-      <nav style="height: 12%;display:flex;align-items:center;background-color:gray;position:sticky;top:0;">
-      <h1 style="display: grid;margin:2px;padding:2px;justify-content:flex-start;position:relative;top:10px;color:black;font-size:60px;">Chess</h1>
-      <ul style="list-style:none;display:inline-block;margin-left:56%;margin-top:50px;">
-      <a href="/" style="color: black;font-size:20px;margin:10px;">Home</a>
-      <a href="../challengepage" style="color: black;font-size:20px;margin:10px;">Forums</a>
-      <a href="../allgames" style="color: black;font-size:20px;margin:10px;">view-games</a>
+  <body>
+    <header>
+      <h1>Chess</h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="../challengepage">All Games</a>
       {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
-        <a href="/login" style="color: black;font-size:20px;margin:10px;">Login/logout</a>
+        <a href="/login">Login</a>
       {{/if}}
-      </ul>
     </nav>
-    
-    <main style="background-image: url('https://cdn.wallpapersafari.com/73/39/C2wfxR.jpg');height:100%;background-size:cover;backgorund:fade;">
+    <main>
       <div class="bod">
         {{{body}}}
       </div>
@@ -92,19 +74,4 @@
     {{/if}}
   </body>
   <script src="../../public/js/gametable.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
-    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
-  <script src="../public\js\news.js"></script>
-</body>
 </html>
