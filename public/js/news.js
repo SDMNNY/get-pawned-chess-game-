@@ -14,7 +14,7 @@ var params = {
         "sports"
     ],
     search: "chess",
-    limit: "5",
+    limit: "100",
 };
 
 var esc = encodeURIComponent;
