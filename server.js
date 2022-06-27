@@ -38,10 +38,6 @@ const sess = {
 };
 
 
-// fetch("https://api.thenewsapi.com/v1/news/all?")
-.then ((res) => res.json())
-.then ((res) => console.log (res));
-
 
 app.use(session(sess));
 
