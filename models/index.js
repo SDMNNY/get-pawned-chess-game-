@@ -2,6 +2,7 @@ const User = require("./User");
 const Move = require("./Move");
 const Game = require("./Game");
 
+
 Game.hasMany(Move, {
   foreignKey: "move_id",
 });
@@ -18,4 +19,4 @@ User.belongsTo(Game, {
   foreignKey: "user_id",
 });
 
-module.exports = { User, Move, Game };
+module.exports = { User, Move, Game};
