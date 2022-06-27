@@ -34,7 +34,6 @@
     "jsdom": "^20.0.0",
     "mysql2": "^2.3.3",
     "newsapi": "^2.4.1",
-    "node-fetch": "^2.6.7",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
