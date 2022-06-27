@@ -1,0 +1,20 @@
+/* 
+Login Page
+*/
+
+.bod {
+    display: flex;
+    flex-direction: column;
+}
+
+.bod h2 {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
