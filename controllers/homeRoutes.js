@@ -17,27 +17,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const moveData = await Move.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: { exclude: ['password'] },
-//         },
-//         {
-//           model: Game,
-//         },
-//       ],
-//     });
-//     const moves = moveData.map((move) =>
-//     moves.get({ plain: true })
-//     );
-//     res.render('homepage');
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 router.get("/game/:id", async (req, res) => {
   try {
@@ -199,3 +178,25 @@ router.get("/login", (req, res) => {
 // });
 
 // module.exports = router;
+
+// router.get('/', async (req, res) => {
+//   try {
+//     const moveData = await Move.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: { exclude: ['password'] },
+//         },
+//         {
+//           model: Game,
+//         },
+//       ],
+//     });
+//     const moves = moveData.map((move) =>
+//     moves.get({ plain: true })
+//     );
+//     res.render('homepage');
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
