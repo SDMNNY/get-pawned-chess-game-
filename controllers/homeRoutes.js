@@ -4,6 +4,7 @@ const { Move, Game, User } = require("../models");
 // custom middleware
 const withAuth = require("../utils/auth");
 
+
 router.get("/", async (req, res) => {
   try {
     const allUsers = await User.findAll({});
