@@ -1,5 +1,6 @@
 // DEPENDENCIES
 const path = require('path');
+const fetch = require('node-fetch');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -35,6 +36,11 @@ const sess = {
     db: sequelize
   })
 };
+
+
+// fetch("https://api.thenewsapi.com/v1/news/all?")
+.then ((res) => res.json())
+.then ((res) => console.log (res));
 
 
 app.use(session(sess));
