@@ -8,8 +8,11 @@ router.get("/", async (req, res) => {
   try {
     const allUsers = await User.findAll({});
     const users = allUsers.map((user) => user.get({ plain: true }));
-    console.log(req.session);
-    res.render("homepage");
+    res.render("homepage", {
+      users,
+      loggedIn: req.session.loggedIn,
+    }
+    );
   } catch (err) {
     res.status(500).json(err);
   }
