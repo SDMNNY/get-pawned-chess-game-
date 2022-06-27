@@ -9,10 +9,7 @@ router.get("/", async (req, res) => {
     const allUsers = await User.findAll({});
     const users = allUsers.map((user) => user.get({ plain: true }));
     console.log(req.session);
-    res.render("homepage", {
-      users,
-      loggedIn: req.session.loggedIn,
-    });
+    res.render("homepage");
   } catch (err) {
     res.status(500).json(err);
   }
@@ -127,6 +124,7 @@ router.get("/challengepage/game-4", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
 
