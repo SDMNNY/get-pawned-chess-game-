@@ -12,13 +12,18 @@ router.get("/", async (req, res) => {
       users,
       loggedIn: req.session.loggedIn,
     });
-=======
-    }
-    );
-
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("login");
 });
 
 // router.get('/', async (req, res) => {
@@ -155,15 +160,6 @@ module.exports = router;
 // });
 
 
-router.get("/login", (req, res) => {
-  console.log(req.session);
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("login");
-});
 // // Get one
 // router.get('/user/:id', async (req, res) => {
 //   if (!req.session.loggedIn) {
