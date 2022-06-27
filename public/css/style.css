@@ -2,19 +2,19 @@
 Login Page
 */
 
-.bod {
-    display: flex;
-    flex-direction: column;
-}
-
-.bod h2 {
-    text-align: center;
-}
 
 .form {
     display: flex;
     flex-direction: column;
     text-align: center;
+    width:33%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    text-align:center;
+    height:30vh;
+
+    flex-direction:column;
+    justify-content:space-evenly;
 }
 
 .challengepage {
