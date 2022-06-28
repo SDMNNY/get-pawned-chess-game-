@@ -4,6 +4,10 @@
 (Still in beta)
 Get Pawned Chess is an application created to bring the global chess community together, while also teaching the next generation of chess grandmasters. Currently, the web application is still in beta mode which allows a user to view famous historical chess games and the notations. The final product will also include a playable chess game; allowing the community to hone in their chess strategies.
 
+## Installation 
+
+Please refer to [Example.env](EXAMPLE.env) before using the application through node.js 
+
 ## Usage
 Deploy link: https://shrouded-citadel-52847.herokuapp.com/
 
@@ -12,13 +16,13 @@ Deploy link: https://shrouded-citadel-52847.herokuapp.com/
 
 
 ### Login Page 
-![screenshot](assets\img\login-mobile.png)
+![screenshot](/assets/img/login-mobile.png)
 
 ### View All Games 
-![screenshot](assets\img\challengepage-full.png)
+![screenshot](/assets/img/challengepage-full.png)
 
 ### Challenge Page 
-![screenshot](assets\img\gamevideo-full.png)
+![screenshot](assets/img/gamevideo-full.png)
 
 
 
