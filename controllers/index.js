@@ -1,4 +1,4 @@
-
+//Exports router as a variable that uses our home routes and api routes as a middleware
 const router = require("express").Router();
 const homeRoutes = require("./homeRoutes");
 const apiRoutes = require('./api');
