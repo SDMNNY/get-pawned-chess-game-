@@ -11,13 +11,13 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       });
-      userData.push(req.body)
-      fs.writeFile("../../seeds/userData.json" , JSON.stringify(userData))
+
       req.session.save(() => {
         req.session.loggedIn = true;
-        FileSystem.write
-        res.status(200).json(dbUserData);
-      });
+      })
+      userData.push(req.body)
+      fs.writeFile("../../seeds/userData.json" , JSON.stringify(userData));
+        es.status(200).json(dbUserData);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
