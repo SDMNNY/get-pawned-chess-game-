@@ -7,7 +7,21 @@ Get Pawned Chess is an application created to bring the global chess community t
 ## Usage
 Deploy link: https://shrouded-citadel-52847.herokuapp.com/
 
-## Mock-Up
+### Inital Page 
+![screenshot](assets\home-mobile.png)
+
+
+### Login Page 
+![screenshot](assets\login-mobile.png)
+
+### View All Games 
+![screenshot](assets\challengepage-full.png)
+
+### Challenge Page 
+![screenshot](assets\gamevideo-full.png)
+
+
+
 
 ## Credits 
 
@@ -20,6 +34,16 @@ Deploy link: https://shrouded-citadel-52847.herokuapp.com/
 5. [Saad Mian](https://github.com/SDMNNY)
 
 ### Resources used:
+
+[MySQL](https://www.mysql.com/)
+
+[Handlebars](https://handlebarsjs.com/)
+
+[Bootstrap](https://getbootstrap.com/)
+
+[Node.js](https://nodejs.org/en/)
+
+[Javascript](https://www.javascript.com/)
 
 ## License 
 Copyright (c) [GET PAWNED] [2022]
