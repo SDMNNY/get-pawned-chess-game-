@@ -26,7 +26,6 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname,"public")))
 
 const sess = {
-  //TODO: Change secret to .env
   secret: process.env.SECRET,
   cookie: {},
   resave: false,
