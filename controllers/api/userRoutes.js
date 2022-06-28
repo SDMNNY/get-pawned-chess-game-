@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const fs = require("fs");
+const userData = require("../../seeds/userData.json")
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -9,10 +11,11 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       });
-  
+      userData.push(req.body)
+      fs.writeFile("../../seeds/userData.json" , JSON.stringify(userData))
       req.session.save(() => {
         req.session.loggedIn = true;
-  
+        FileSystem.write
         res.status(200).json(dbUserData);
       });
     } catch (err) {
