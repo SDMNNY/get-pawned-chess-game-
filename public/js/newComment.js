@@ -2,6 +2,7 @@ const addComment = async (event) => {
   event.preventDefault();
 
   const comment = document.querySelector("#newCommentTextArea").value;
+  console.log(comment);
 
   if (comment) {
     const response = await fetch("/api/comments", {
