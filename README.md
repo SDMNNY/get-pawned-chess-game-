@@ -8,17 +8,17 @@ Get Pawned Chess is an application created to bring the global chess community t
 Deploy link: https://shrouded-citadel-52847.herokuapp.com/
 
 ### Inital Page 
-![screenshot](assets\home-mobile.png)
+![screenshot](assets\img\home-mobile.png)
 
 
 ### Login Page 
-![screenshot](assets\login-mobile.png)
+![screenshot](assets\img\login-mobile.png)
 
 ### View All Games 
-![screenshot](assets\challengepage-full.png)
+![screenshot](assets\img\challengepage-full.png)
 
 ### Challenge Page 
-![screenshot](assets\gamevideo-full.png)
+![screenshot](assets\img\gamevideo-full.png)
 
 
 
