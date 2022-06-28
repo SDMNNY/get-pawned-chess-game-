@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const session = require("connect-session-sequelize");
-const { Move, Game, User } = require("../models");
+const { Comment, Game, User } = require("../models");
 // custom middleware
 const withAuth = require("../utils/auth");
 
@@ -57,12 +57,15 @@ router.get("/challengepage", withAuth, async (req, res) => {
 
 router.get("/challengepage/game-1", withAuth, async (req, res) => {
   try {
-    const allUsers = await User.findAll();
+    const allUsers = await User.findAll({
+      include:[Comment]
+    });
     const users = allUsers.map((user) => user.get({ plain: true }));
     res.render("game-1", {
       users,
       loggedIn: req.session.loggedIn,
     });
+    
   } catch (err) {
     res.status(500).json(err);
   }

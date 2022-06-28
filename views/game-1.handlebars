@@ -34,7 +34,7 @@
   </div> 
 
 
-<div class='card mx-auto'>
+{{!-- <div class='card mx-auto'>
   <h5 class='card-header'>ChessProd1</h5>
   <div class='card-body'>
     <p class='card-text'>WOW!! that was so sick lmao</p>
@@ -46,8 +46,15 @@
   <div class='card-body'>
     <p class='card-text'>Don't get why he would do that move at 0:48</p>
   </div>
-</div>
-
+</div> --}}
+{{#each users as |user|}}
+<div class='card mx-auto'>
+  <h5 class='card-header'>{{username}}</h5>
+  <div class='card-body'>
+    <p class='card-text'>{{user.comment}}</p>
+  </div>
+</div> 
+{{/each}}
 <div class='mb-3 mx-auto'>
   <textarea id='newCommentTextArea' class='form-control' rows='3' placeholder='Add a comment' name='comment-add'></textarea>
   <button type='submit' class='btn btn-primary commentBtn'>Post Comment</button>
